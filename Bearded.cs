@@ -3,9 +3,14 @@ using System;
 
 namespace ConsoleFamily
 {
-    class Bearded : IBearded
+    class Bearded : ChainElement, IBearded
     {
         private readonly string owner;
+
+        public Bearded(string owner, IChainElement next) : base(next)
+        {
+            this.owner = owner;
+        }
 
         public Bearded(string owner)
         {

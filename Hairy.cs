@@ -3,9 +3,14 @@ using System;
 
 namespace ConsoleFamily
 {
-    class Hairy : IHairy
+    class Hairy : ChainElement, IHairy
     {
         private readonly string owner;
+
+        public Hairy(string owner, IChainElement next) : base(next)
+        {
+            this.owner = owner;
+        }
 
         public Hairy(string owner)
         {

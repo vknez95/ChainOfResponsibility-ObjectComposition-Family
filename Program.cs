@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Family.Common;
 
 namespace ConsoleFamily
 {
@@ -11,22 +12,30 @@ namespace ConsoleFamily
         {
             FamilyMember dad =
                 new FamilyMember(
-                    new object[] { new Bearded("Dad"), new Emotional("Dad", "hoho") });
+                    new Bearded("Dad",
+                        new Emotional("Dad", "hoho")));
             FamilyMember mom =
                 new FamilyMember(
-                    new object[] { new Hairy("Mom"), new Emotional("Mom", "hihi") });
+                    new Hairy("Mom",
+                        new Emotional("Mom", "hihi")));
             FamilyMember boy =
                 new FamilyMember(
-                    new object[] { new Emotional("Boy", "haha") });
+                    new Emotional("Boy", "haha"));
             FamilyMember dog =
                 new FamilyMember(
-                    new object[] { new Emotional("Dog", "tail waving") });
+                    new Emotional("Dog", "tail waving"));
             FamilyMember uncle =
                 new FamilyMember(
-                    new object[] { new Bearded("Uncle"), new Hairy("Uncle") });
+                    new Bearded("Uncle",
+                        new Hairy("Uncle")));
+            FamilyMember granddad =
+                new FamilyMember(
+                    new Bearded("Granddad",
+                        new Hairy("Granddad",
+                            new Emotional("Granddad", "oyoyo"))));
 
             Family family =
-                new Family(new FamilyMember[] { dad, mom, boy, dog, uncle });
+                new Family(new FamilyMember[] { dad, mom, boy, dog, uncle, granddad });
 
             family.WinterBegins();
             family.SummerComes();
